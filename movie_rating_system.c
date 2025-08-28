@@ -67,27 +67,27 @@ void showMenu() {
 }
 
 void addMovie() {
-    printf("Logic not written yet.\n");
+    printf("\nLogic not written yet.\n");
 }
 
 void viewAllMovies() {
-    printf("Logic not written yet.\n");
+    printf("\nLogic not written yet.\n");
 }
 
 void searchMovie() {
-    printf("Logic not written yet.\n");
+    printf("\nLogic not written yet.\n");
 }
 
 void sortMoviesByRating() {
-    printf("Logic not written yet.\n");
+    printf("\nLogic not written yet.\n");
 }
 
 void saveMoviesToFile() {
-    printf("Logic not written yet.\n");
+    printf("\nLogic not written yet.\n");
 }
 
 void loadMoviesFromFile() {
-    printf("Logic not written yet.\n");
+    printf("\nLogic not written yet.\n");
 }
 
 void getCurrentDate(char *buffer, size_t size) {
