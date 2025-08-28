@@ -9,7 +9,7 @@ typedef struct {
     char title[100];
     char genre[50];
     int rating;
-    int releasedYear;
+    int releaseYear;
     char watchedDate[10];
 } Movie;
 
@@ -67,7 +67,36 @@ void showMenu() {
 }
 
 void addMovie() {
-    printf("\nLogic not written yet.\n");
+    if(movieCount >- MAX_MOVIES){
+        printf("Movie list is full!\n");
+        return;    
+    }
+
+    Movie m;
+
+    printf("Enter Title:");
+    fgets(m.title, sizeof(m.title), stdin);
+    m.title[strcspn(m.title, "\n")] = '\0';
+
+    printf("Enter Genre: ");
+    fgets(m.genre, sizeof(m.genre), stdin);
+    m.genre[strcspn(m.genre, "\n")] = '\0';
+
+    do {
+        printf("Enter Rating (1-10): ");
+        scanf("%d", &m.rating);
+        getchar();
+    } while(m.rating < 1 || m.rating > 10);
+
+    printf("Enter Release Year: ");
+    scanf("%d", &m.releaseYear);
+    getchar();
+
+    getCurrentDate(m.watchedDate, sizeof(m.watchedDate));
+
+    movies[movieCount++] = m;
+    printf("Movie added successfully!\n");
+
 }
 
 void viewAllMovies() {
