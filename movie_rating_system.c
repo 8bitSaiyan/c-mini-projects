@@ -10,7 +10,7 @@ typedef struct {
     char genre[50];
     int rating;
     int releaseYear;
-    char watchedDate[10];
+    char watchedDate[11];
 } Movie;
 
 // Global movie collection
@@ -112,7 +112,7 @@ void sortMoviesByRating() {
 }
 
 void saveMoviesToFile() {
-    FILE  *fp = fopen("movies.txt", "w");
+    FILE  *fp = fopen("movies.txt", "a");
     if(!fp) {
         perror("Error saving file");
         return;
