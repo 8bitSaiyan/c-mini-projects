@@ -27,6 +27,35 @@ void saveMoviesToFile();
 void loadMoviesFromFile();
 void getCurrentDate(char *buffer, size_t size);
 
+int main() {
+    loadMoviesFromFile();
+
+    int choice;
+
+    do {
+        showMenu();
+        printf("Enter your choice: ");
+        if(scanf("%d", &choice) != 1) {
+            printf("Invalid input! Exiting. \n");
+            break;
+        }
+
+        getchar();
+
+        switch (choice)
+        {
+        case 1: addMovie(); break;
+        case 2: viewAllMovies(); break;
+        case 3: searchMovie(); break;
+        case 4: sortMoviesByRating(); break;
+        case 5: saveMoviesToFile(); break;       
+        default: printf("Invalid Choice!\n"); break;
+        }
+
+    } while(choice != 5);
+
+    return 0;
+}
 
 void showMenu() {
     printf("\n=== Personal Movie Rating System ===\n");
