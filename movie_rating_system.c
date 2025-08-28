@@ -67,7 +67,7 @@ void showMenu() {
 }
 
 void addMovie() {
-    if(movieCount >- MAX_MOVIES){
+    if(movieCount >= MAX_MOVIES){
         printf("Movie list is full!\n");
         return;    
     }
