@@ -61,3 +61,9 @@ void loadMoviesFromFile() {
     printf("Logic not written yet.\n");
 }
 
+void getCurrentDate(char *buffer, size_t size) {
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+    snprintf(buffer, size, "%02d-%02d-%04d",
+             tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
+}
