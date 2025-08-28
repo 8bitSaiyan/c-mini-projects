@@ -112,7 +112,23 @@ void sortMoviesByRating() {
 }
 
 void saveMoviesToFile() {
-    printf("\nLogic not written yet.\n");
+    FILE  *fp = fopen("movies.txt", "w");
+    if(!fp) {
+        perror("Error saving file");
+        return;
+    }
+
+    for(int i = 0; i < movieCount; i++){
+        fprintf(fp, "%s;%s;%d;%d;%s\n",
+        movies[i].title,
+        movies[i].genre,
+        movies[i].rating,
+        movies[i].releaseYear,
+        movies[i].watchedDate
+    );
+    }
+    fclose(fp);
+    printf("Movies saved to file.\n");
 }
 
 void loadMoviesFromFile() {
